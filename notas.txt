@@ -1,0 +1,18 @@
+REACT 
+el flujo de react es unidireccional, de arriba hacia abajo
+    la informacion baja de arriba hacia abajo, desde app a los componentes hijos
+        para pasar esta info lo hacemos con las props
+    para hacerlo de abajo hacia arriba lo hacemos con eventos
+
+VIRTUAL DOM
+    es una especie de copia del DOM hace 2 procesos,
+        diffing que busca diferencias con el DOM 
+        y otro de reconciliacion, donde actualiza estas diferencias
+    
+NODE
+    node es como un entorno de ejecucion de JS
+
+REDUX es una herramienta para el manejo de estados
+
+CLI comand line interface
+    CRA es la abreviacion de create-react-app
