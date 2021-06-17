@@ -1,12 +1,13 @@
 import './App.css';
 import {NavBar} from "./components/NavBar/NavBar";
-import './components/NavBar/NavBar.css';
+import {ItemListContainer} from "./components/ItemListContainer/ItemListContainer";
 
 function App() {
+  const mensaje = "ESTE ES EL CONTENEDOR DE GREETING";
   return (
     <div className="App">
       <NavBar/>
-      <h2>Esta es mi página!</h2>
+      <ItemListContainer greeting={mensaje} />
     </div>
   );
 }

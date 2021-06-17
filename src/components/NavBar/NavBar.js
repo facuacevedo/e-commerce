@@ -1,3 +1,6 @@
+import './NavBar.css';
+import {CartWidget} from '../CartWidget/CartWidget.js';
+
 export const NavBar = () => {
     return(
         <div className="navegacion">
@@ -8,6 +11,7 @@ export const NavBar = () => {
                     <li>Producto</li>
                     <li>Carrito</li>
                     <li>Nosotros</li>
+                    <li><CartWidget /></li>
                 </ul>
             </div>
         </div>

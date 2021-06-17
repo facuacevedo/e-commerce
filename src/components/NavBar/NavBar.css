@@ -1,7 +1,4 @@
 .navegacion{
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
     width: 100%;
     background-color: #343A40;
     color: white;
@@ -12,10 +9,11 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    padding: 1rem 0;
 }
 .navegacion h1{
     text-transform: lowercase;
-    font-size: 30px;
+    font-size: 4rem;
     color: #E8E46E;
 }
 .navegacion h1 span{
@@ -26,14 +24,15 @@
     display: flex;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 .navegacion ul li{
+    font-size: 1.5rem;
     list-style: none;
-    padding: 10px 20px;
+    margin: 1rem 2rem;
     text-transform: uppercase;
     cursor: pointer;
 }
 .navegacion ul li:hover{
-    background-color: #626568;
     color: #E8E46E;
 }
