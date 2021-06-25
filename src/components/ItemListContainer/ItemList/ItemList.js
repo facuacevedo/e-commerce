@@ -8,7 +8,7 @@ export const ItemList = ({items}) => {
         <div className="lista seccion">
             {items.legnth === 0 ? <p>Cargando...</p>:
             (items.map((item) => {
-                return <Item item={item} />
+                return <Item key = {item.id} item={item} />
             }))}
         </div>
     )

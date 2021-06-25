@@ -5,6 +5,7 @@ import {ItemCount} from "./components/ItemListContainer/ItemCount";
 
 function App() {
   const mensaje = "ESTE ES EL CONTENEDOR DE GREETING";
+
   return (
     <div className="App">
       <NavBar />

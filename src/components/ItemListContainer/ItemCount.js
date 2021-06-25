@@ -4,15 +4,17 @@ import "./ItemCount.css";
 export const ItemCount = ({stock, initial, onAdd}) => {
     let inicial = Number(initial);
     const [add, setAdd] = useState(inicial);
-
     
-    function cantidad(){
+    const sumarCant = () => {
         const evaluar = (add < inicial || add >= stock || stock == null  ) ? false : setAdd(add + 1);
         return evaluar;
-    }
-    function restar(){
+    } 
+    const restarCant = () => {
         const evaluar = (add <= inicial || add > stock || stock == null ) ? false : setAdd( add - 1);
         return evaluar;
+    }
+    const anadirCarrito = () => {
+        alert(`Añadiste la cantidad de ${add} al carrito`);
     }
 
     return (
@@ -20,11 +22,11 @@ export const ItemCount = ({stock, initial, onAdd}) => {
             <h3 className="centrarTexto">Producto</h3>
 
             <div className="contenidoCount">
-            <button onClick={ () => { cantidad () } }> + </button>
+            <button onClick={ () => { sumarCant() } }> + </button>
             <input type="number" value={add} readOnly />
-            <button onClick={() =>{ restar() } }>-</button>
+            <button onClick={() =>{ restarCant() } }>-</button>
             </div>
-            <button onClick={onAdd}>Añadir al carrito</button>
+            <button onClick={() => {anadirCarrito()}}>Añadir al carrito</button>
         </div>
     )
 }
