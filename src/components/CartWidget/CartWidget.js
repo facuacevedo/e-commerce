@@ -3,7 +3,7 @@ import logoCart from '../../img/logoCart.png';//importo el logo del carrito
 
 export const CartWidget = () =>{
     return(
-        <div>
+        <div className="cart">
             <img src={logoCart} alt="cart"></img>
         </div>
     )
