@@ -1,0 +1,21 @@
+.contenidoItem{
+    width: 30rem;
+    background-color: #fff;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 12px 3px rgba(0,0,0,0.4);
+}
+.contenidoItem p,
+.contenidoItem h3{
+    margin: 1.3rem 0;
+    text-transform: lowercase;
+    color: #343A40;
+}
+.contenidoItem p{
+    font-size: 1.5rem;
+}
+.contenidoItem img{
+    border-radius: .5rem ;
+}

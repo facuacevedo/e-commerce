@@ -23,7 +23,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
 
             <div className="contenidoCount">
             <button onClick={ () => { sumarCant() } }> + </button>
-            <input type="number" value={add} readOnly />
+            <input type="number" value={add} readOnly/>
             <button onClick={() =>{ restarCant() } }>-</button>
             </div>
             <button onClick={() => {anadirCarrito()}}>Añadir al carrito</button>
