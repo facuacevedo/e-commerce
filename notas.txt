@@ -1,0 +1,17 @@
+    para hacer mas dinamicas las categorias se puede generar un array con las categorias
+    crear un array.map(categories) => (
+        <NavLink to={`category/${categories}`}>
+            <li>{categories}</li>
+        </NavLink>
+    )
+    de esta forma no hace falta que se escriba "manual". solamente agregando al array la categoria
+
+    para filtrar en itemlistcontainer, por ejemplo, en base al id
+    se puede hacer un ternario de 
+        id ? array.filter((item) => item.categoryId === id ) : array
+    esto hara que si no existe el id, muestre todos los items del array
+    pero si existe algun id, filtre en base a ese id, los items del array
+
+    si esto es usa en un useEffect debemos pasar el id para que reciba el cambio
+    del efecto, sino, no sucedera nada ya que el useEffect no estara escuchando
+    ningun cambio 

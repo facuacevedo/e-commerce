@@ -1,5 +1,6 @@
 /* ITEMS */
 .producto{
+    height: 100%;
     background-color: #F9DFDC;
     padding: 2rem;
     border-radius: 1rem;
@@ -13,9 +14,7 @@
     font-size: 2rem;
     text-align: center;
 }
-.producto-id{
-    display: none;
-}
+
 .producto img{
     width: 80%;
     height: 100%;
