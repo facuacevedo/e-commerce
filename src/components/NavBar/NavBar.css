@@ -1,7 +1,7 @@
 .navegacion{
     width: 100%;
-    background-color: #343A40;
-    color: white;
+    background-color: rgba(0,0,0,0.4);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
 }
 .contenedor{
     width: 90%;
@@ -11,14 +11,13 @@
     margin: 0 auto;
     padding: 1rem 0;
 }
-.navegacion h1{
+.logo{
     text-transform: lowercase;
     font-size: 4rem;
-    color: #E8E46E;
+    color: #fff;
 }
-.navegacion h1 span{
-    text-transform: uppercase;
-    color: white;
+.logo:hover{
+    color: #d991af;
 }
 .navegacion ul{
     display: flex;
@@ -30,9 +29,15 @@
     font-size: 1.5rem;
     list-style: none;
     margin: 1rem 2rem;
-    text-transform: uppercase;
+    text-transform: lowercase;
     cursor: pointer;
 }
 .navegacion ul li:hover{
-    color: #E8E46E;
+    color: #fff;
+}
+.links{
+    color: #d991af;
+}
+.activeClass{
+    color: #fff;
 }

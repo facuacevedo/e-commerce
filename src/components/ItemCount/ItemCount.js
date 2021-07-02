@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import "./ItemCount.css";
 
 export const ItemCount = ({stock, initial, onAdd}) => {
@@ -18,15 +18,13 @@ export const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     return (
-        <div className="contenido">
-            <h3 className="centrarTexto">Producto</h3>
-
+        <Fragment className="contenido">
             <div className="contenidoCount">
-            <button onClick={ () => { sumarCant() } }> + </button>
-            <input type="number" value={add} readOnly/>
-            <button onClick={() =>{ restarCant() } }>-</button>
+                <button onClick={() =>{ restarCant() } }>-</button>
+                <input type="text" value={add} readOnly/>
+                <button onClick={ () => { sumarCant() } }> + </button>
             </div>
             <button onClick={() => {anadirCarrito()}}>Añadir al carrito</button>
-        </div>
+        </Fragment>
     )
 }

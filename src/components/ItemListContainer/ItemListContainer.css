@@ -7,3 +7,24 @@
 .margen{
     margin: 2rem 0;
 }
+.lista{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+@media (min-width:600px) {
+    .lista{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 30rem;
+        gap: 3rem;
+    }
+}
+@media (min-width: 900px) {
+    .lista{
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 30rem;
+    }   
+}

@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
     font-size:62.5%;
     font-family: 'Roboto', sans-serif;
@@ -17,16 +18,15 @@ h2{
 h3{
     font-size:3rem;
 }
-img{
-    max-width: 100%;
-}
 li{
     list-style: none;
 }
 a{
     text-decoration: none;
 }
-
+img{
+    max-width: 100%;
+}
 /* UTILIDADES */
 .fw100{
     font-weight: 100;
@@ -44,4 +44,12 @@ a{
     max-width: 120rem;
     width: 80%;
     margin: 0 auto;
+}
+
+.App{
+    background: no-repeat url("./img/background1.png");
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    overflow: scroll;
 }

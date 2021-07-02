@@ -1,5 +1,5 @@
 .contenidoItem{
-    width: 30rem;
+    max-width: 50rem;
     background-color: #fff;
     text-align: center;
     margin: 2rem auto;
@@ -14,7 +14,7 @@
     color: #343A40;
 }
 .contenidoItem p{
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 .contenidoItem img{
     border-radius: .5rem ;
