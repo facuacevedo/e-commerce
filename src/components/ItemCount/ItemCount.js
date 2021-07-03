@@ -13,18 +13,15 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         const evaluar = (add <= inicial || add > stock || stock == null ) ? false : setAdd( add - 1);
         return evaluar;
     }
-    const anadirCarrito = () => {
-        alert(`Añadiste la cantidad de ${add} al carrito`);
-    }
 
     return (
-        <Fragment className="contenido">
+        <Fragment>
             <div className="contenidoCount">
                 <button onClick={() =>{ restarCant() } }>-</button>
                 <input type="text" value={add} readOnly/>
                 <button onClick={ () => { sumarCant() } }> + </button>
             </div>
-            <button onClick={() => {anadirCarrito()}}>Añadir al carrito</button>
+            <button onClick={ onAdd }>Añadir al carrito</button>
         </Fragment>
     )
 }

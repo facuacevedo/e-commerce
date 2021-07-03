@@ -1,4 +1,4 @@
-.contenido{
+/* .contenido{
     height: 100%;
     border: solid 1px #FFC107;
     border-radius: 2rem;
@@ -8,7 +8,7 @@
     padding: 2rem 1rem;
     margin: 0 auto;
     text-transform: lowercase;
-}
+} */
 
 .contenidoCount{
     display: grid;
