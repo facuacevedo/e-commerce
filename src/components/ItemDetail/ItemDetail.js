@@ -1,17 +1,23 @@
 import "./ItemDetail.css"
 import { NavLink } from 'react-router-dom';
 import { ItemCount } from '../ItemCount/ItemCount';
-import { Fragment, useState } from "react";
+import { Fragment, useState, useContext} from "react";
+import { CartContext  } from '../../Context/CartContext';
 
 export const ItemDetail = ({ item }) => {
     const [{ title, price, description, imgUrl }] = item;
+    const [ count, setCount ] = useState(0)
     const [ compra, setCompra ] = useState();
+    const { addItem } = useContext(CartContext);
 
-    const finalizarCompra = () =>{
-        alert("Añadiste este producto al carrito");
+    console.log("quantity", count);
+
+    const onAdd =  (quantity)=> {
+        setCount(quantity);
         setCompra(1);
+        addItem(item,quantity);
     }
-    
+
     return (
         <div className="contenidoItem ">
             <h3>{title}</h3>
@@ -21,7 +27,7 @@ export const ItemDetail = ({ item }) => {
             <Fragment>
                 {compra ?
                 <NavLink to="/cart"><button>Termina tu compra</button></NavLink>:
-                <ItemCount stock="10" initial="1" onAdd= { finalizarCompra } />}
+                <ItemCount stock="10" initial="1" onAdd= { onAdd } />}
             </Fragment>
         </div>
     )
