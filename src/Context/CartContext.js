@@ -8,20 +8,30 @@ export const CartProvider = ({ children, defaultCart = []}) => {
 
     //agrega la cantidad o item al cart
     const addItem = (item, quantity) => {
+        //busca si hay un item igual en el cart
+        if( cart.find( (object) => (object.item[0].id === item[0].id)) ){
+            console.log("sumar la cantidad");
+            const object = cart.find( obj => obj.item[0].id === item[0].id);
+            //le suma la cantidad
+            object.quantity += quantity;
+            /* console.log("objeto isincart",object) */
+        }else{
             updateCart({ item, quantity });
             console.log("item subido");
+        }
     }
 
     //actualiza el carrito
     const updateCart = (object) => {
         setCart([...cart, object] );
     }
-
     
-    //busca si hay un item igual en el cart
-    /* const isInCart = () => {console.log("isincart")} */
-    
-    /* const removeItem = () => {console.log("removeitem")}; */
+    const removeItem = (itemId) => {
+            const newCart = cart.slice();
+            const filterCart = newCart.filter( obj => obj.item[0].id !== itemId )
+            setCart( filterCart );
+            console.log("removeitem")
+    };
     
     const clearCart = () => {
         setCart(defaultCart);
@@ -32,7 +42,7 @@ export const CartProvider = ({ children, defaultCart = []}) => {
     console.log("cart", cart);
     
     return (
-        <CartContext.Provider value={ { addItem, clearCart }}>
+        <CartContext.Provider value={ { addItem, clearCart, removeItem }}>
             {children}
         </CartContext.Provider>
     )
