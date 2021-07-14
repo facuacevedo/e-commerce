@@ -1,10 +1,11 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';;
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children, defaultCart = []}) => {
 
     const [ cart, setCart ] = useState( defaultCart )
+    const [ cantidadCarrito, setCantidadCarrito] = useState(0);
 
     //agrega la cantidad o item al cart
     const addItem = (item, quantity) => {
@@ -38,11 +39,26 @@ export const CartProvider = ({ children, defaultCart = []}) => {
         console.log("clear")
     };
     
+    
+
+    useEffect( () => {
+        const quantityCart = () => {
+            let total = 0
+            //recorre cada objeto y le suma la cantidad al total
+            if( cart.length > 0 ){
+                cart.forEach( obj => total += obj.quantity)
+            }
+            console.log("total", total);
+            setCantidadCarrito(total);
+        }
+        quantityCart()
+    } , [cart])
+
     //ver que tiene el cart
     console.log("cart", cart);
     
     return (
-        <CartContext.Provider value={ { addItem, clearCart, removeItem }}>
+        <CartContext.Provider value={ { addItem, clearCart, removeItem, cart, cantidadCarrito }}>
             {children}
         </CartContext.Provider>
     )
