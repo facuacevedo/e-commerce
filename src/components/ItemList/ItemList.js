@@ -9,7 +9,7 @@ export const ItemList = ({items}) => {
         <div className="lista seccion">
             {items.length === 0 ? <p>Cargando...</p> :
                 (items.map((item) => {
-                        return <Item key = {item.id} item={item} />
+                        return <Item key = {items.id} item={item} />
                         }
                         )
                     )
