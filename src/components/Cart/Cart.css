@@ -41,6 +41,16 @@
     text-align: center;
 }
 
+.cardProducto div{
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+.valorTotal{
+    margin-bottom: 2rem;
+}
 /* BOTONES */
 .btnClear{
     left : -10;
@@ -53,9 +63,3 @@
     font-weight: 300;
 }
 
-.cardProducto div{
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 1px solid black;
-    margin-bottom: 1rem;
-}

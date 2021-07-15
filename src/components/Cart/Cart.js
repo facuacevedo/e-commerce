@@ -3,7 +3,7 @@ import { CartContext } from "../../Context/CartContext";
 import './Cart.css';
 
 export const Cart = () => {
-    const { cart, removeItem, clearCart } = useContext( CartContext );
+    const { cart, removeItem, clearCart, total } = useContext( CartContext );
 
     return (
         <section className="bgProductos">
@@ -32,7 +32,9 @@ export const Cart = () => {
                     </div>
                 : <p className="sinProductos">Debes seleccionar al menos 1 producto</p>
             }
-            <p className="valorTotal">$total</p>
+            {   total === 0
+                ? false
+                : <p className="valorTotal">$ {total}</p>}
 
             {cart.length > 0
             ? <button className="btnClear" onClick={ () => { clearCart() }}>Limpiar carrito</button>

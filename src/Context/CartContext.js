@@ -4,8 +4,9 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children, defaultCart = []}) => {
 
-    const [ cart, setCart ] = useState( defaultCart )
+    const [ cart, setCart ] = useState( defaultCart );
     const [ cantidadCarrito, setCantidadCarrito] = useState(0);
+    const [ total, setTotal ] = useState(0);
 
     //agrega la cantidad o item al cart
     const addItem = (item, quantity) => {
@@ -39,8 +40,7 @@ export const CartProvider = ({ children, defaultCart = []}) => {
         console.log("clear")
     };
     
-    
-
+    //efecto para obtener la cantidad de items seleccionados del carrito
     useEffect( () => {
         const quantityCart = () => {
             let total = 0
@@ -53,12 +53,21 @@ export const CartProvider = ({ children, defaultCart = []}) => {
         }
         quantityCart()
     } , [cart])
+    //efecto para obtener el precio total de los items seleccionados
+    useEffect( () => {
+        const newTotal = cart
+        .map( (product) => product.item[0].price * product.quantity )
+        .reduce( ( accum, current ) => accum + current, 0)
+        //metodo map para recorrer el cart, reduce para acumular los valores, con un valor inicial 0
+
+        setTotal(newTotal);
+    }, [cart])
 
     //ver que tiene el cart
     console.log("cart", cart);
     
     return (
-        <CartContext.Provider value={ { addItem, clearCart, removeItem, cart, cantidadCarrito }}>
+        <CartContext.Provider value={ { addItem, clearCart, removeItem, cart, cantidadCarrito, total }}>
             {children}
         </CartContext.Provider>
     )
