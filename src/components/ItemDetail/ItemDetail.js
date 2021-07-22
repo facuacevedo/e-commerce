@@ -5,7 +5,7 @@ import { Fragment, useState, useContext} from "react";
 import { CartContext  } from '../../Context/CartContext';
 
 export const ItemDetail = ({ item }) => {
-    const [{ title, price, description, imgUrl }] = item;
+    const [{ title, price, description, imgUrl } ] = item;
     const [ count, setCount ] = useState(0)
     const [ compra, setCompra ] = useState();
     const { addItem, removeItem } = useContext(CartContext);
