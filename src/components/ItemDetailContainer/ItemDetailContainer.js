@@ -10,11 +10,6 @@ export const ItemDetailContainer = () => {
     const [item, setItem] = useState();
 
     useEffect( () => {
-        /* const getItems = () => {
-            return ITEMS.filter( (item) => item.id === id);
-        }
-        const items = getItems() ;
-        setItem(items); */
         
         const getFirestore = () =>  dataBase;
         const db = getFirestore();
@@ -22,7 +17,6 @@ export const ItemDetailContainer = () => {
         const itemsFiltrados = itemCollection.where('itemId','==', parseInt(id));
 
         itemsFiltrados.get().then( (querySnapshot) => {
-            console.log("item filtrado",querySnapshot.docs)
             if(querySnapshot.size === 0){
                 console.log("no results")
             }

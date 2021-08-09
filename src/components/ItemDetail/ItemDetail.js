@@ -5,17 +5,15 @@ import { Fragment, useState, useContext} from "react";
 import { CartContext  } from '../../Context/CartContext';
 
 export const ItemDetail = ({ item }) => {
-    const [{ title, price, description, imgUrl } ] = item;
+    const [{ title, price, description, imgUrl }] = item;
     const [ count, setCount ] = useState(0)
-    const [ compra, setCompra ] = useState();
-    const { addItem, removeItem } = useContext(CartContext);
+    const { addItem } = useContext(CartContext);
 
-    console.log("quantity", count);
+    /* console.log("quantity", count); */
 
     const onAdd =  (quantity)=> {
         setCount(quantity);
-        setCompra(1);
-        addItem(item,quantity);
+        addItem(item, quantity);
     }
 
     return (
@@ -25,11 +23,10 @@ export const ItemDetail = ({ item }) => {
             <img src={imgUrl} alt="imagen producto" />
             <p>{description}</p>
             <Fragment>
-                {compra ?
+                {count ?
                 <NavLink to="/cart"><button>Termina tu compra</button></NavLink>:
                 <ItemCount stock="10" initial="1" onAdd= { onAdd } />}
             </Fragment>
-            <button onClick={ () => removeItem( item[0].id) } >Quitar item del carrito</button>
         </div>
     )
 }

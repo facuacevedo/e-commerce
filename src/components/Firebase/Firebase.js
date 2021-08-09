@@ -14,4 +14,5 @@ var firebaseConfig = {
 
 const fb = firebase.initializeApp(firebaseConfig);
 //disponible para todos
+
 export const dataBase = fb.firestore();

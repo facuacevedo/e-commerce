@@ -7,13 +7,15 @@ export const CartProvider = ({ children, defaultCart = []}) => {
     const [ cart, setCart ] = useState( defaultCart );
     const [ cantidadCarrito, setCantidadCarrito] = useState(0);
     const [ total, setTotal ] = useState(0);
+    const [ order, setOrder ] = useState()
 
+    
     //agrega la cantidad o item al cart
     const addItem = (item, quantity) => {
         //busca si hay un item igual en el cart
-        if( cart.find( (object) => (object.item[0].id === item[0].id)) ){
-            console.log("sumar la cantidad");
-            const object = cart.find( obj => obj.item[0].id === item[0].id);
+        if( cart.find( (object) => (object.item[0].itemId === item[0].itemId)) ){
+            /* console.log("sumar la cantidad"); */
+            const object = cart.find( obj => obj.item[0].itemId === item[0].itemId);
             //le suma la cantidad
             object.quantity += quantity;
             /* console.log("objeto isincart",object) */
@@ -30,7 +32,7 @@ export const CartProvider = ({ children, defaultCart = []}) => {
     
     const removeItem = (itemId) => {
             const newCart = cart.slice();
-            const filterCart = newCart.filter( obj => obj.item[0].id !== itemId )
+            const filterCart = newCart.filter( obj => obj.item[0].itemId !== itemId )
             setCart( filterCart );
             console.log("removeitem")
     };
@@ -40,6 +42,20 @@ export const CartProvider = ({ children, defaultCart = []}) => {
         console.log("clear")
     };
     
+    const getOrder = ({ name, surname, tel, email }) => {
+        const items = cart.map( ({item, quantity}) => {
+            return ({id:item[0].itemId, title:item[0].title, price:item[0].price, quantity:quantity})
+        })
+
+        return {buyer:{
+            name,
+            surname,
+            tel,
+            email
+        },
+        items,  
+        total}
+    }
     //efecto para obtener la cantidad de items seleccionados del carrito
     useEffect( () => {
         const quantityCart = () => {
@@ -67,7 +83,7 @@ export const CartProvider = ({ children, defaultCart = []}) => {
     console.log("cart", cart);
     
     return (
-        <CartContext.Provider value={ { addItem, clearCart, removeItem, cart, cantidadCarrito, total }}>
+        <CartContext.Provider value={ { addItem, clearCart, removeItem, cart, cantidadCarrito, total, getOrder, setOrder, order}}>
             {children}
         </CartContext.Provider>
     )

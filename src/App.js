@@ -5,6 +5,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import{ ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { NotFound } from './components/NotFound/NotFound';
 import { Cart } from './components/Cart/Cart';
+import { Checkout } from './components/Checkout/Checkout';
 
 export const App = () => {
   /* const mensaje = "ESTE ES EL CONTENEDOR DE GREETING"; */
@@ -17,6 +18,7 @@ return (
           <Route path="/category/:id" component={ItemListContainer} exact/>
           <Route path="/item/:id" component={ItemDetailContainer} exact/>
           <Route path="/cart" component={Cart} exact/>
+          <Route path="/checkout" component={Checkout} exact/>
           <Route path="*/*" component={NotFound} />
         </Switch>
       </div>
@@ -25,8 +27,3 @@ return (
 }
 
 export default App;
-
-/* {<NavBar />
-          <ItemListContainer greeting={mensaje} />
-          <ItemCount initial="1" stock="10"/>
-          <ItemDetailContainer />} */

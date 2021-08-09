@@ -13,12 +13,6 @@ export const ItemListContainer = ({greeting}) => {
 
     //creo un efecto para que escuche cualquier cambio en el id
     useEffect(()=>{
-        /* //una promise que crea un array con objetos
-        const getItems = () => {
-            return id ? ITEMS.filter( (item) => item.categoryId === id ) : ITEMS;
-        }
-        const items = getItems()
-        setItems(items); */
         setLoading(true)
         const getFirestore = () =>  dataBase;
         const db = getFirestore();
@@ -26,7 +20,6 @@ export const ItemListContainer = ({greeting}) => {
         const itemsFiltrados = id ? itemCollection.where('categoryId','==', id) : itemCollection;
 
         itemsFiltrados.get().then( (querySnapshot) => {
-            console.log("datos lista",querySnapshot.docs)
             if(querySnapshot.size === 0){
                 console.log("no results")
             }
