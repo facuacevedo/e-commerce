@@ -12,10 +12,6 @@
     font-size:1.7rem;
 }
 
-.producto div{
-    width: 100%;
-}
-
 .listaProductos{
     width: 100%;
     display: flex;

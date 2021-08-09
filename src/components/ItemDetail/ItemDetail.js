@@ -21,7 +21,7 @@ export const ItemDetail = ({ item }) => {
             <h3>{title}</h3>
             <p className="fw700">${price}</p>
             <img src={imgUrl} alt="imagen producto" />
-            <p>{description}</p>
+            <p className="description">{description}</p>
             <Fragment>
                 {count ?
                 <NavLink to="/cart"><button>Termina tu compra</button></NavLink>:

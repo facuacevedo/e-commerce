@@ -1,0 +1,41 @@
+.checkout{
+    margin:2rem ;
+    display: block;
+}
+
+.compraFinalizada{
+    background-color: #fff;
+    padding: 2rem;
+    margin: 2rem 1rem;
+}
+
+.compraFinalizada p{
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+} 
+
+.tituloCheck{
+    font-size: 2.5rem;
+    text-transform: lowercase;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contenidoCheckout{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+.contenidoCheckout p{
+    text-transform: lowercase;
+    font-size: 1.8rem;
+}
+.total{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #333;
+    text-align: end;
+    margin: 1rem 0;
+}

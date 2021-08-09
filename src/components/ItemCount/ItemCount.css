@@ -1,15 +1,3 @@
-/* .contenido{
-    height: 100%;
-    border: solid 1px #FFC107;
-    border-radius: 2rem;
-    background-color: #E1E8EB;
-    color: #343A40;
-    box-shadow: 0px 5px 12px 5px rgba(0, 0, 0, 0.35);
-    padding: 2rem 1rem;
-    margin: 0 auto;
-    text-transform: lowercase;
-} */
-
 .contenidoCount{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
@@ -29,6 +17,7 @@
     border-radius: .7rem;
     transition: .2s;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .contenidoCount input:hover, button:hover{

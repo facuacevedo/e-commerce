@@ -16,6 +16,12 @@
 .contenidoItem p{
     font-size: 2rem;
 }
+
 .contenidoItem img{
     border-radius: .5rem ;
+}
+
+.description{
+    font-size: 1.6rem;
+    color: red;
 }

@@ -1,14 +1,14 @@
 import './NavBar.css';
 import { CartWidget } from '../CartWidget/CartWidget';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
     return(
         <div className="navegacion">
             <div className="contenedor">
-                <Link to="/">
+                <NavLink activeClassName="activeClass" className="links" to="/" exact>
                     <h1 className="logo">Saku's</h1>
-                </Link>
+                </NavLink>
                 <ul className="categories">
                     <NavLink activeClassName="activeClass" className="links" to="/category/comidas" >
                         <li>Comidas</li>

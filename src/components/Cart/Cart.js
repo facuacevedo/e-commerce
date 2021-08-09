@@ -31,20 +31,24 @@ export const Cart = () => {
                                 </ul>
                             </div>)}
                     </div>
-                : <p className="sinProductos">Debes seleccionar al menos 1 producto</p>
+                : <p className="sinProductos">Debes seleccionar un producto</p>
             }
             {   total === 0
                 ? false
                 : <p className="valorTotal">$ {total}</p>}
-
-            {cart.length > 0
-            ? <button className="btnClear" onClick={ () => { clearCart() }}>Limpiar carrito</button>
-            : false
-        }
-        <Link to="/checkout">
-            <button>Finalizar compra</button>
-        </Link>
-
+    {/* BOTONES */}
+                {   
+                    cart.length > 0
+                    ? <button className="btnClear" onClick={ () => { clearCart() }}>Limpiar carrito</button>
+                    : false
+                }
+                {
+                    cart.length === 0
+                    ? false
+                    :<Link to="/checkout">
+                        <button>Finalizar compra</button>
+                    </Link>
+                }
         </div>
 
         </section>

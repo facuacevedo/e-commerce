@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from "react"
 import { CartContext } from "../../Context/CartContext"
+import './Form.css';
 
 export const Form = ({ onClick }) => {
     const { getOrder, setOrder } = useContext(CartContext)
@@ -13,19 +14,17 @@ export const Form = ({ onClick }) => {
         email2:""
     })
 
-    const mostrar = getOrder(infoForm);
-    
-    console.log("esto tiene la ordem", mostrar)
-
     const onFormInput = ({ target }) => {
         //de esta forma se setea la nueva informacion al estado del form sin perder la anterior
         const newInfoForm = {...infoForm, [target.name] : target.value};
         setInfoForm(newInfoForm);
+        const dataOrder = getOrder(infoForm)
+        setOrder(dataOrder)
     }
     const onSubmit = (event) => {
         event.preventDefault()
-        setOrder(mostrar)
-
+        /* const dataOrder = getOrder(infoForm)
+        setOrder(dataOrder) */
     }
 
     useEffect(() => {       
@@ -41,7 +40,7 @@ export const Form = ({ onClick }) => {
     },[ infoForm ])
 
     return (
-        <form onSubmit={ onSubmit} >
+        <form className="formulario" onSubmit={ onSubmit} >
             <label >
                 Nombre:
                 <input name="name" type="text" onChange={ onFormInput} value={infoForm.name}></input>
@@ -59,10 +58,10 @@ export const Form = ({ onClick }) => {
                 <input name="email" type="email" onChange={ onFormInput} value={infoForm.email}></input>
             </label>
             <label >
-                Repite tu e-mail:
+                Repetir e-mail:
                 <input name="email2" type="email" onChange={ onFormInput} value={infoForm.email2}></input>
             </label>
-            <input type="submit" onClick={ onClick } onSubmit={ onSubmit } disabled={ isFormDisabled } value="Enviar orden de compra"/>
+            <input className="inputSubmit" type="submit" onClick={ onClick } onSubmit={ onSubmit } disabled={ isFormDisabled } value="Enviar orden de compra"/>
         </form>
 
         

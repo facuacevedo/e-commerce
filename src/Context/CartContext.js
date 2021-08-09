@@ -47,14 +47,13 @@ export const CartProvider = ({ children, defaultCart = []}) => {
             return ({id:item[0].itemId, title:item[0].title, price:item[0].price, quantity:quantity})
         })
 
-        return {buyer:{
+        return ({buyer:{
             name,
             surname,
             tel,
             email
         },
-        items,  
-        total}
+        items})
     }
     //efecto para obtener la cantidad de items seleccionados del carrito
     useEffect( () => {

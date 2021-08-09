@@ -1,0 +1,32 @@
+.formulario{
+    padding: 2rem;
+    margin: 2rem 4rem;
+    background-color: #d6c9c9;
+    border-radius: .8rem;
+    box-shadow: 0px 5px 12px 5px rgba(0,0,0,0.35);
+}
+
+@media (min-width: 768px) {
+    .formulario{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.formulario label{
+    margin-bottom: .8rem;
+    font-size: 1.5rem;
+}
+.inputSubmit{
+    grid-column: 1 / 4;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid #000;
+    padding: 1rem;
+    font-size: 2rem;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+.inputSubmit:hover{
+    border:1px solid #ed95ba ;
+}

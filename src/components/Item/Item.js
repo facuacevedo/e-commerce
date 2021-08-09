@@ -7,7 +7,7 @@ export const Item = ({item}) => {
     
     return (
         //recibe el parametro por el "id"
-            <div >
+            <div className="itemContenedor" >
                 <Link to={`/item/${itemId}`}>
                     <article id={itemId} className="producto">
                                 <p className="producto-titulo">{title}</p>
